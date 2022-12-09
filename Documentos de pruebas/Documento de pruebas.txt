@@ -1,0 +1,4 @@
+En esta carpeta se agregan los documentos relacionados con las pruebas. Ejemplo:
+
+- Modelos de bizzagi en los que se pueda brindar un mejor entendimiento de los actores y flujos que hacen parte de la automatización
+- TestPlan con el alcance y componentes de las pruebas
