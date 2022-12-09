@@ -1,0 +1,52 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'java-library'
+
+//compileJava.options.encoding = 'Cp1252'
+compileJava.options.encoding = 'UTF-8'
+
+apply plugin: 'net.serenity-bdd.aggregator'
+
+repositories {
+    jcenter()
+    mavenLocal()
+    mavenCentral()
+}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('net.serenity-bdd:serenity-gradle-plugin:2.0.33')
+    }
+}
+
+apply plugin: 'java-library'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+dependencies {
+    implementation 'net.serenity-bdd:serenity-core:3.4.3'
+    implementation 'net.serenity-bdd:serenity-junit:3.4.3'
+    implementation 'net.serenity-bdd:serenity-screenplay:3.4.3'
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:3.4.3'
+    implementation 'net.serenity-bdd:serenity-cucumber:3.4.3'
+    implementation 'junit:junit:4.13.2'
+    implementation 'net.serenity-bdd:serenity-cucumber:3.4.3'
+    implementation 'org.assertj:assertj-core:3.23.1'
+    implementation 'org.slf4j:slf4j-simple:2.0.5'
+    testImplementation('io.github.bonigarcia:webdrivermanager:5.3.1')
+
+
+}
+
+compileJava.options.encoding = 'UTF-8'
+gradle.startParameter.continueOnFailure = true
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+test {
+    ignoreFailures = false
+}
