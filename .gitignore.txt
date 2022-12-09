@@ -14,10 +14,10 @@
 *.iml
 
 # Serenity-BDD
-*/target/
-*target/
-*/logs/
-*build/
+*./target/
+*.target/
+*./logs/
+*.build/
 
 # Intellij
 */.idea/
